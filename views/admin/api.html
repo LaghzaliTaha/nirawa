@@ -1,0 +1,36 @@
+<div class="jumbotron">
+        <h1>Theme example</h1>
+        <p>This is a template for test url.</p>
+        <p>url parametre is : {{name}}</p>
+      </div>
+<div ng-controller="mainController">
+  <label>
+               {{ taha }}
+              {{parametres.id_partie}}
+                </label>
+
+
+      <!-- FORM TO CREATE TODOS -->
+        <div id="todo-form" class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form method="post" name="ajout">
+        <!--div class="form-group"-->
+
+          <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+          <input required name="id article" class="pure-u-1-3" ng-model="formData.id_article" type="hidden" placeholder="id de l article" />
+          <input required name="id partie" class="pure-u-1-3" ng-model="formData.id_partie" type="hidden" placeholder="id de la partie" />
+          <input required name="id question" class="pure-u-1-3" ng-model="formData.id_question" type="hidden" placeholder="id de la question" />
+
+<input ngf-select="upload($file)" ng-model="file" name="file"  accept="image/*" type="file" required />
+
+<div>
+<input type="checkbox" ng-model="formData2.verite"  ng-init="formData2.verite=false" />Cochez si la bonne question
+           <button type="submit" class="btn btn-primary btn-lg"  ng-click="createMedia()">Valider</button>
+  </div>
+
+<!--/div-->
+
+                    </div>
+</form>
+    </div>
+  </div>

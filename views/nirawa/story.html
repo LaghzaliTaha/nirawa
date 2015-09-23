@@ -1,0 +1,41 @@
+  <div ng-include="'sidebar.html'"></div>
+<div class="row">
+ <div class="row">
+ <div class="col-md-6 col-md-push-4 col-sm-4 col-sm-push-4">
+ <div  style="float:right" ng-controller="StoryController"  >
+<div class="col-md-4" ng-repeat="art in article | filter:search" ng-if="$index%3===0">
+ <table  border="0" style="width:100%" align="center" >
+ <tr>
+ <td >   <img ng-src="{{art.article_image}}" width=100px  height=100px  ui-sref="AfficherPartie({id:'{{art._id}}'})"> <p>
+       {{art.article_name}} <p>
+       {{art.article_summary}} <p>
+ </td>
+   </tr>
+</table>
+</div>
+
+<div class="col-md-4 col-xs-12 col-sm-6" ng-repeat="art in article | filter:search" ng-if="$index%3===1">
+ <table  border="0" style="width:100%" align="center" >
+ <tr>
+ <td >   <img ng-src="{{art.article_image}}" width=100px  height=100px ui-sref="AfficherPartie({id:'{{art._id}}'})"> <p>
+       {{art.article_name}} <p>
+       {{art.article_summary}} <p>
+ </td>
+   </tr>
+</table>
+</div>
+
+<div class="col-md-4 col-xs-12 col-sm-6" ng-repeat="art in article | filter:search" ng-if="$index%3===2">
+  <table  border="0" style="width:100%" align="center" >
+ <tr>
+ <td >   <img ng-src="{{art.article_image}}" width=100px  height=100px ui-sref="AfficherPartie({id:'{{art._id}}'})">  <p>
+       {{art.article_name}} <p>
+       {{art.article_summary}} <p>
+ </td>
+   </tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>

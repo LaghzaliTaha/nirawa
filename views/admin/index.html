@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../angular/admin/routes.js"></script>
+    <script type="text/javascript" src="../angular/admin/services.js"></script>
+    <script type="text/javascript" src="../angular/admin/controllers.js"></script>
+    <script type="text/javascript" src="../angular/admin/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+  </head>
+
+  <body ng-app="app">
+      <header ng-include="'nav.html'"></header>
+<div class="container">
+  <div ui-view></div>
+</div>
+
+
+  </body>
+</html>

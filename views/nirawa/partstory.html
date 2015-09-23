@@ -1,0 +1,29 @@
+  <div ng-include="'sidebar.html'"></div>
+  <center>
+<br/>
+  <div class="row">
+<div   ng-controller="PartsController">
+ 
+     <div class="col-md-6 col-sm-8 col-md-push-3 col-sm-push-4"  >
+
+	
+    <ul>
+        <li ng-repeat="part in parts  | startFrom:currentPage*pageSize | limitTo:pageSize">
+          <div class="style-Partie" ng-bind-html="jsonAsHtml(part.content)"></div>
+        </li>
+    </ul>
+	<br/><br/><br/><br/><br/>
+	  <ul class="pagination">
+    <li ng-hide="currentPage == 0" ng-click="currentPage=currentPage-1">
+       <a > Partie Precedente</a>
+    </li>
+    
+  <li ng-hide="currentPage == parts.length-1" ng-click="currentPage=currentPage+1">
+    <a > Partie Suivante </a>  </li>
+
+	</ul>
+ 
+	
+  </div>
+ </div>
+ 
