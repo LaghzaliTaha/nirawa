@@ -5,6 +5,7 @@ var morgan      = require('morgan');
 var adminRoutes = require('./routes/admin'),
     userRoutes  = require('./routes/user');
 var db = require('./models/db');
+var port = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({extended: false }));
 app.use(bodyParser.json());
@@ -28,5 +29,5 @@ app.get('/',function(req,res){
 })
 /*******end******/
 
-app.listen(3000);
-console.log("Serveur running on port 3000");
+app.listen(port);
+console.log("Serveur running on port 8080");

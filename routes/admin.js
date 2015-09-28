@@ -1,5 +1,5 @@
 var express = require('express'),
-  bcrypt = require('bcrypt');
+
   apiRoutes = express.Router(),
 	bodyParser = require('body-parser'),
   mongoose = require('mongoose'),
@@ -17,7 +17,7 @@ var express = require('express'),
   });
 //apiRoutes.set('superSecret','tecdev');
 
-var salt = bcrypt.genSaltSync(10);
+
 var secretToken = 'aMdoeb5ed87zorRdkD6greDML81DcnrzeSD648ferFejmplx';
 var user = require('../models/administrators');
 var Admin = mongoose.model('Administrator');
@@ -69,7 +69,7 @@ Admin.findOne({
         //res.json('no user');
         res.json(1);
       } else if (user) {
-        //if (bcrypt.compareSync(user.password, bcrypt.hashSync(req.body.password, salt))) {
+        
         if(req.body.password != user.password){
         res.json(0);
         //res.json('no pass');

@@ -8,7 +8,6 @@
     "email": ""
   },
   "dependencies": {
-    "bcrypt": "^0.8.5",
     "body-parser": "^1.13.2",
     "express": "^4.0.0",
     "express-jwt": "~0.2.1",

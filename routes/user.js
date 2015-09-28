@@ -1,6 +1,6 @@
 var express = require('express'),
   apiRoutes = express.Router(),
-  bcrypt = require('bcrypt');
+
 	bodyParser = require('body-parser'),
   mongoose = require('mongoose'),
   ejwt = require('express-jwt');
@@ -83,8 +83,7 @@ var user = require('../models/users'),
           res.json(1);
           //res.send(400,"Utilisateur n'existe pas !!");
         } else if (user) {
-          //console.log(bcrypt.compareSync(user.password,bcrypt.hashSync(req.body.password, 10)));
-          //if (bcrypt.compareSync(user.password,bcrypt.hashSync(req.body.password, 10))) {
+
             if(req.body.password == user.password){
             var token = jwt.sign({id: user.email_or_phone,Admin:false},secretToken, { expiresInMinutes: 60 });
             return res.json({token:token});
@@ -108,7 +107,7 @@ apiRoutes.post('/signin',function(req,res){
           User.create({
             email_or_phone: req.body.email,
             password: req.body.password
-            //password: bcrypt.hashSync(req.body.password, 10),
+            
         		}, function (err, user){
         			if(err){
         				res.send(400,"There was a problem adding the information to the database");
