@@ -7,12 +7,12 @@
      <div class="col-md-6 col-sm-8 col-md-push-3 col-sm-push-4"  >
 
 	
-    <ul>
-        <li ng-repeat="part in parts  | startFrom:currentPage*pageSize | limitTo:pageSize">
+    
+        <div ng-repeat="part in parts  | startFrom:currentPage*pageSize | limitTo:pageSize">
           <div class="style-Partie" ng-bind-html="jsonAsHtml(part.content)"></div>
-        </li>
-    </ul>
-	<br/><br/><br/><br/><br/>
+        </div>
+    
+
 	  <ul class="pagination">
     <li ng-hide="currentPage == 0" ng-click="currentPage=currentPage-1">
        <a > Partie Precedente</a>
