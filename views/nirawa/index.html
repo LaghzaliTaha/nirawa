@@ -9,31 +9,31 @@
   <script>
 
  function light(){
-				 
+
 					$('.backdrop, .boite').animate({'opacity':'.50'}, 300, 'linear');
 					$('.boite').animate({'opacity':'1.00'}, 300, 'linear');
 					$('.backdrop, .boite').css('display', 'block');
-			 
+
 $('.close').click(function(){
 				$('.backdrop, .boite').animate({'opacity':'0'}, 300, 'linear', function(){
 					$('.backdrop, .boite').css('display', 'none');
 				});
 
 				});
- 
+
 				$('.backdrop').click(function(){
 				$('.backdrop, .boite').animate({'opacity':'0'}, 300, 'linear', function(){
 					$('.backdrop, .boite').css('display', 'none');
 				});
 
-				});				
- 
+				});
+
  }
- 
-				
-	
- 
-			
+
+
+
+
+
 
   </script>
   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
@@ -42,7 +42,7 @@ $('.close').click(function(){
 	<!-->
     <link rel="stylesheet" type="text/css" href="../css/buttons.css"/>
 
-    
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,13 +52,13 @@ $('.close').click(function(){
     <![endif]-->
 
 
-  <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+  <script src="https://code.angularjs.org/1.2.13/angular.js"></script>
   <script type="text/javascript" src="../angular/nirawa/routes.js"></script>
   <script type="text/javascript" src="../angular/nirawa/controllers.js"></script>
   <script type="text/javascript" src="../angular/nirawa/Services.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
   <script type="text/javascript" src="../angular/nirawa/app.js"></script>
-  
+
   </head>
 <body background="../images/background.jpg">
   <header ng-include="'nav.html'"></header>
