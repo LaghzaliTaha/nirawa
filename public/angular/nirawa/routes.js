@@ -12,6 +12,11 @@
           templateUrl: "page.html",
           access: { requiredAuthentication: true }
         })
+        .state("contact",{
+          url:"/contact",
+          templateUrl: "contact.html",
+          access: { requiredAuthentication: false }
+        })
         .state('stories', {
         url: "/Affichage",
         templateUrl: 'story.html',

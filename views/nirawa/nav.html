@@ -12,12 +12,13 @@
         </div>
       <div id="navbar" class="navbar-collapse collapse" ng-controller="mainController">
     <ul class="nav navbar-nav navbar-right">
-      <li class="active" ng-hide="token()"><a ui-sref="home">Acceuil</a></li>
+	<li><a ui-sref="home" ng-show="token()" >Index</a></li>
+      <li class="active" ng-hide="token()" ><a ui-sref="home">Acceuil</a></li>
       <li><a ui-sref="update" ng-hide="NFB()">Profile</a></li>
       <li><a ui-sref="stories" ng-hide="token()">Mes Histoires</a></li>
-      <li><a href="#" ng-show="token()" ng-click="signin=1">Authentification</a></li>
-      <li><a href="#" ng-show="token()" ng-click="signin=2">Inscription</a></li>
-      <li><a href="#" >Nous Contactez</a></li>
+          
+	  <li><a ui-sref="contact" >Nous Contactez</a></li>
+	
       <li><a href="#" ng-hide="token()" ng-click="logout()">Se Deconnecter</a></li>
 
     </ul>
