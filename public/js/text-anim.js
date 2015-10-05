@@ -1,5 +1,5 @@
 var wss_i = 0;
-var wss_array = ["lire","apprendre","comprendre","etre intelligent"];
+var wss_array = ["apprendre","comprendre","etre intelligent"];
 var wss_elem;
 function wssNext(){
 	wss_i++;
