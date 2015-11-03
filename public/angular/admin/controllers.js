@@ -6,7 +6,7 @@
         $scope.login = function() {
           if($scope.user.username !== undefined && $scope.user.password !== undefined){
             console.log("Login Access success");
-            $http.post('./login', $scope.user).success(function(response) {
+            $http.post('https://lit-spire-7515.herokuapp.com/login', $scope.user).success(function(response) {
               if(response == 1){
                 $scope.user.message="Utilisateur n'existe pas !!";
               }
@@ -29,7 +29,7 @@
         app.controller('UpdateCtrl', ['$scope','$http','$location','GetName','AuthenticationService',function($scope,$http,$location,GetName,AuthenticationService) {
             console.log("access to console update");
             var user = GetName.user;
-            $http.get('./update/'+user).success(function(response) {
+            $http.get('https://lit-spire-7515.herokuapp.com/update/'+user).success(function(response) {
               $scope.email = response.email_or_phone;
               $scope.firstname = response.first_name;
               $scope.lastname = response.last_name;
@@ -47,7 +47,7 @@
                   password: $scope.password
               }
               console.log(user);
-                $http.post('./update', user).success(function(response) {
+                $http.post('https://lit-spire-7515.herokuapp.com/update', user).success(function(response) {
                     console.log(response);
                     if(response == 0){
                       $scope.message="invalid mot de pass"
@@ -64,7 +64,7 @@
         };
         $scope.reset = function(){
           var user = GetName.user;
-          $http.get('./update/'+user).success(function(response) {
+          $http.get('https://lit-spire-7515.herokuapp.com/update/'+user).success(function(response) {
             $scope.email = response.email_or_phone;
             $scope.firstname = response.first_name;
             $scope.lastname = response.last_name;
@@ -85,11 +85,11 @@
             };
           };
           $scope.logout = function() {
-              $http.get('./logout').success(function(data){
+              $http.get('https://lit-spire-7515.herokuapp.com/logout').success(function(data){
                 console.log('ttttt');
                 AuthenticationService.isAuthenticated = false;
                 $window.sessionStorage.clear();
-                $location.path("./");
+                $location.path("https://lit-spire-7515.herokuapp.com");
               });
           };
         }]);
@@ -97,7 +97,7 @@
           if(GetName.admin == false){
             AuthenticationService.isAuthenticated = false;
             $window.sessionStorage.clear();
-            $location.path("login");
+            $location.path("https://lit-spire-7515.herokuapp.com/login");
           }
           else{
             if($window.sessionStorage.isAuthenticated){

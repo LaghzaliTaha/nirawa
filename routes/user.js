@@ -23,7 +23,7 @@ var user = require('../models/users'),
     res.render("index")
   });
   /***********afficher histoire******/
-  apiRoutes.get('/Affichage',function(req,res){
+  apiRoutes.get('https://lit-spire-7515.herokuapp.com/Affichage',function(req,res){
     mongoose.model('article').find(function(err,article){
       if (err) res.send(err);
       res.json(article);//req.params.id
@@ -31,7 +31,7 @@ var user = require('../models/users'),
   });
   /**************end***************/
   /**********afficher partie histoire ******/
-  apiRoutes.get('/AfficherPartie/:id',function(req,res){
+  apiRoutes.get('https://lit-spire-7515.herokuapp.com/AfficherPartie/:id',function(req,res){
     var id=req.params.id;
     mongoose.model('article').findById(id,function(err,art){
       if (err) res.send(err);
@@ -40,7 +40,7 @@ var user = require('../models/users'),
   });
   /*******end************/
     /**************update*********/
-    apiRoutes.post('/update',/*ejwt({secret: secretToken}),*/function(req, res) {
+    apiRoutes.post('https://lit-spire-7515.herokuapp.com/update',/*ejwt({secret: secretToken}),*/function(req, res) {
     console.log('+++++++'+req.body.email+'++++++'+req.body.password);
     User.findOne({
        email_or_phone: req.body.email
@@ -73,7 +73,7 @@ var user = require('../models/users'),
      });
     /********end-update*********/
   /*********login********/
-  apiRoutes.post('/login', function(req, res) {
+  apiRoutes.post('https://lit-spire-7515.herokuapp.com/login', function(req, res) {
   User.findOne({
         email_or_phone: req.body.email
       }, function(err, user) {
@@ -95,7 +95,7 @@ var user = require('../models/users'),
     });
   /********end-login-------/
 /***********create-signin******/
-apiRoutes.post('/signin',function(req,res){
+apiRoutes.post('https://lit-spire-7515.herokuapp.com/signin',function(req,res){
   console.log("test");
   User.findOne({
         email_or_phone: req.body.email
@@ -122,7 +122,7 @@ apiRoutes.post('/signin',function(req,res){
 })
 /*********end signin **********/
 /*********confirm*********/
-apiRoutes.post('/confirm',function(req,res){
+apiRoutes.post('https://lit-spire-7515.herokuapp.com/confirm',function(req,res){
   User.create({
     email_or_phone: req.body.email,
     idFacebook : req.body.id,
@@ -141,7 +141,7 @@ apiRoutes.post('/confirm',function(req,res){
 });
 /*******end confirm********/
 /********loginFB***********/
-apiRoutes.post('/loginFB',function(req,res){
+apiRoutes.post('https://lit-spire-7515.herokuapp.com/loginFB',function(req,res){
   console.log(req.body.email +'12');
   User.findOne({
         email_or_phone: req.body.email
@@ -175,7 +175,7 @@ apiRoutes.post('/loginFB',function(req,res){
         }
       });
 });*/
-apiRoutes.get('/update/:id', function(req, res) {
+apiRoutes.get('https://lit-spire-7515.herokuapp.com/update/:id', function(req, res) {
     console.log(req.params.id);
     User.findOne({
           email_or_phone: req.params.id
@@ -188,7 +188,7 @@ apiRoutes.get('/update/:id', function(req, res) {
 });
 /******end get for update ******/
 /*******logout********/
-apiRoutes.get('/logout'/*,ejwt({secret: secretToken})*/,function(req, res) {
+apiRoutes.get('https://lit-spire-7515.herokuapp.com/logout'/*,ejwt({secret: secretToken})*/,function(req, res) {
   //res.json('ayoub');
   console.log(req.user);
   delete req.user;
