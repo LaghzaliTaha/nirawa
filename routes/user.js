@@ -18,12 +18,12 @@ var article =require('../models/articles.js');
 var user = require('../models/users'),
     User = mongoose.model('User');
 /***********************************/
-  apiRoutes.use(express.static("https://lit-spire-7515.herokuapp.com" ));
+  apiRoutes.use(express.static("https://lit-spire-7515.herokuapp.com"));
   apiRoutes.get('https://lit-spire-7515.herokuapp.com', function(req, res) {
     res.render("index")
   });
   /***********afficher histoire******/
-  apiRoutes.get('/Affichage',function(req,res){
+  apiRoutes.get('https://lit-spire-7515.herokuapp.com/Affichage',function(req,res){
     mongoose.model('article').find(function(err,article){
       if (err) res.send(err);
       res.json(article);//req.params.id
