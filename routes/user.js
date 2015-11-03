@@ -19,7 +19,7 @@ var user = require('../models/users'),
     User = mongoose.model('User');
 /***********************************/
   //apiRoutes.use(express.static(__dirname + '/views/nirawa'));
-  apiRoutes.get('/', function(req, res) {
+ /* apiRoutes.get('/', function(req, res) {
     res.render("index")
   });
   /***********afficher histoire******/
