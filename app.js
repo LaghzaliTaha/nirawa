@@ -19,14 +19,14 @@ app.use(function(req, res, next) {
 });
 /*********/
 app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/views/'));
+//app.use(express.static(__dirname + '/views/'));
 //app.use(express.static(__dirname + '/views/nirawa'));
-app.use('/admin', adminRoutes);
-app.use('/nirawa', userRoutes);
+//app.use('/admin', adminRoutes);
+a//pp.use('/nirawa', userRoutes);
 /******index*****/
-app.get('/',function(req,res){
-  res.redirect('/nirawa');
-})
+//app.get('/',function(req,res){
+  //res.redirect('/nirawa');
+//})
 /*******end******/
 
 app.listen(port);
