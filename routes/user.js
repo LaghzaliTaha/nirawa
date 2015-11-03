@@ -18,7 +18,7 @@ var article =require('../models/articles.js');
 var user = require('../models/users'),
     User = mongoose.model('User');
 /***********************************/
-  apiRoutes.use(express.static(__dirname + '/views/nirawa'));
+  apiRoutes.use(express.static("https://lit-spire-7515.herokuapp.com" ));
   apiRoutes.get('https://lit-spire-7515.herokuapp.com', function(req, res) {
     res.render("index")
   });
