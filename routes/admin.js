@@ -22,7 +22,7 @@ var secretToken = 'aMdoeb5ed87zorRdkD6greDML81DcnrzeSD648ferFejmplx';
 var user = require('../models/administrators');
 var Admin = mongoose.model('Administrator');
 /**************update*********/
-apiRoutes.post('https://lit-spire-7515.herokuapp.com/update',ejwt({secret: secretToken}),function(req, res) {
+apiRoutes.post('/update',ejwt({secret: secretToken}),function(req, res) {
 Admin.findOne({
    email_or_phone: req.body.email
  }, function(err, user) {
@@ -53,14 +53,14 @@ Admin.findOne({
  });
 /********end-update*********/
 /********logout***********/
-apiRoutes.get('https://lit-spire-7515.herokuapp.com/logout'/*,ejwt({secret: secretToken})*/,function(req, res) {
+apiRoutes.get('/logout'/*,ejwt({secret: secretToken})*/,function(req, res) {
   console.log(req.user);
   delete req.user;
   return res.send(200);
 });
 /********end logout *******/
 /*************login*************/
-apiRoutes.post('https://lit-spire-7515.herokuapp.com/login', function(req, res) {
+apiRoutes.post('/login', function(req, res) {
 Admin.findOne({
       email_or_phone: req.body.username
     }, function(err, user) {
@@ -82,7 +82,7 @@ Admin.findOne({
   });
 /***********end-login***********/
 /**********get for update*******/
-apiRoutes.get('https://lit-spire-7515.herokuapp.com/update/:id', function(req, res) {
+apiRoutes.get('/update/:id', function(req, res) {
     console.log(req.params.id);
     Admin.findOne({
           email_or_phone: req.params.id
