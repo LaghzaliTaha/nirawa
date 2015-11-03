@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
 });
 /*********/
 app.use(express.static(__dirname + '/public'));
-//app.use(express.static(__dirname + '/views/'));
+app.use(express.static(__dirname + '/views/'));
 //app.use(express.static(__dirname + '/views/nirawa'));
 app.use('/admin', adminRoutes);
 app.use('/nirawa', userRoutes);
