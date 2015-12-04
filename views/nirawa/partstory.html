@@ -3,13 +3,12 @@
   <center>
 <br/>
   <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-6 col-sm-8 col-md-push-3 col-sm-push-4" >
   <div class="panel panel-default">
   <div class="panel-body">
 <div   ng-controller="PartsController">
  
-     <div class="col-md-6 col-sm-8 col-md-push-3 col-sm-push-4"  >
-
+  
 	
     
         <div ng-repeat="part in parts  | startFrom:currentPage*pageSize | limitTo:pageSize">
@@ -26,7 +25,7 @@
     <a > Partie Suivante </a>  </li>
 
 	</ul>
- </div>
+
 	
   </div>
  </div>
