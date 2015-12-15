@@ -24,10 +24,12 @@ var user = require('../models/users'),
   });
   /***********afficher histoire******/
   apiRoutes.get('/Affichage',function(req,res){
-    mongoose.model('article').find(function(err,article){
+
+    mongoose.model('article').find(function(err,art){
       if (err) res.send(err);
-      res.json(article);//req.params.id
-    });
+      res.json(art);
+    }).select( { 'article_name': 1, 'article_image': 1 ,'article_summary' : 1 });
+
   });
   /**************end***************/
   /**********afficher partie histoire ******/
