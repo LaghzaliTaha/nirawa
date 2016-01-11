@@ -22,7 +22,7 @@
         $scope.login = function() {
           if($scope.user.email !== undefined && $scope.user.password !== undefined){
             console.log("Login Access success");
-            $http.post('./login', $scope.user).success(function(response) {
+            $http.post('https://hikaya.herokuapp.com/nirawa/login', $scope.user).success(function(response) {
               console.log(response);
               if(response == 1){
                 $scope.user.message="Utilisateur n'existe pas !!";
@@ -52,9 +52,9 @@
                       FB.api('/me?fields=name,email,last_name,first_name', function (response) {
                           console.log(response);
                           var fbuser = response;
-                          $http.post('./loginFB', response).success(function(response) {
+                          $http.post('https://hikaya.herokuapp.com/nirawa/loginFB', response).success(function(response) {
                             if(response == 1){
-                              $http.post('./confirm',fbuser).success(function(response) {
+                              $http.post('https://hikaya.herokuapp.com/nirawa/confirm',fbuser).success(function(response) {
                                 $window.sessionStorage.isAuthenticated = true;
                                 AuthenticationService.isAuthenticated = true;
                                 $window.sessionStorage.token = response.token;
@@ -93,7 +93,7 @@
             console.log(user);
             var user = GetName.user;
             console.log(user);
-            $http.get('./update/'+user).success(function(response) {
+            $http.get('https://hikaya.herokuapp.com/nirawa/update/'+user).success(function(response) {
               $scope.email = response.email_or_phone;
               $scope.firstname = response.first_name;
               $scope.lastname = response.last_name;
@@ -110,7 +110,7 @@
                   lastname: $scope.lastname,
                   password: $scope.password
               }
-                $http.post('./update', user).success(function(response) {
+                $http.post('https://hikaya.herokuapp.com/nirawa/update', user).success(function(response) {
                     if(response == 0){
                       $scope.message="invalid mot de passe"
                     }else if(response == 1){
@@ -127,7 +127,7 @@
         };
             $scope.reset = function(){
               var user = GetName.user;
-              $http.get('./update/'+user).success(function(response) {
+              $http.get('https://hikaya.herokuapp.com/nirawa/update/'+user).success(function(response) {
                 $scope.email = response.email_or_phone;
                 $scope.firstname = response.first_name;
                 $scope.lastname = response.last_name;
@@ -142,7 +142,7 @@
             $scope.create = function() {
               if($scope.user.email !== undefined && $scope.user.password !== undefined && $scope.user.passwordConfirmation !== undefined){
                 if($scope.user.password == $scope.user.passwordConfirmation){
-                  $http.post('./signin', $scope.user).success(function(response) {
+                  $http.post('https://hikaya.herokuapp.com/nirawa/signin', $scope.user).success(function(response) {
                     $window.sessionStorage.isAuthenticated = true;
                     AuthenticationService.isAuthenticated = true;
                     $window.sessionStorage.isNFB = true;
@@ -182,7 +182,7 @@
             }
           }
           $scope.logout = function() {
-              $http.get('./logout').success(function(data){
+              $http.get('https://hikaya.herokuapp.com/nirawa/logout').success(function(data){
                 AuthenticationService.isAuthenticated = false;
                 AuthenticationService.isNFB = false;
                 $window.sessionStorage.clear();
@@ -192,7 +192,7 @@
         }]);
   app.controller("StoryController",function ($scope, $http,$location) {
     $scope.article = {};
-    $http.get('./Affichage')
+    $http.get('https://hikaya.herokuapp.com/nirawa/Affichage')
             .success(function(data) {
                 $scope.article = data;
             })
