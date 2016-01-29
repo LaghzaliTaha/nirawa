@@ -14,8 +14,8 @@
 <br/><br/><br/>
 <div class="panel panel-success"  >
 <div class="panel-heading">
-  <a class="panel-title" ng-click="signin=1">Authentification /  </a>
-  <a class="panel-title" ng-click="signin=2">inscription </a>
+  <a class="panel-title" ng-click="signin=1">Authentification / login : user@hikaya.com password : user </a>
+
 </div>
 <div class="panel-body">
   <form class="form-horizontal"  ng-show="signin==1" ng-controller="HomeCtrl">
@@ -51,46 +51,7 @@
  </div>
 </fieldset>
 </form>
-<form class="form-horizontal" ng-show="signin==2" ng-controller="CreateCtrl">
-<fieldset>
 
-  <div class="form-group">
-    <label for="inputEmail" class="col-lg-3 control-label">Email</label>
-    <div class="col-lg-8">
-      <input type="email" class="form-control" ng-model="user.email" placeholder="Email">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail" class="col-lg-3 control-label">Password
-    </label>
-    <div class="col-lg-8">
-      <input type="Password" class="form-control" ng-model="user.password" placeholder="Password">
-    </div>
-  </div>
-   <div class="form-group">
-    <label for="inputEmail" class="col-lg-3 control-label">Confirm Password
-    </label>
-    <div class="col-lg-8">
-      <input type="Password" class="form-control" ng-model="user.passwordConfirmation" placeholder="Password">
-    </div>
-  </div>
-  <label class="text-danger">    {{user.message}}</label>
-  <div class="form-group">
-
-
-     <div class="col-lg-8 col-lg-push-3">
-
-  </div>
-
-  <div class="form-group">
-    <div class="col-lg-10 col-lg-offset-2">
-      <button type="submit" class="btn btn-info" ng-click="create()">S'inscrire</button>
-    </div>
-  </div>
-  </div>
- </div>
-</fieldset>
-</form>
 </div>
 
 </div>
